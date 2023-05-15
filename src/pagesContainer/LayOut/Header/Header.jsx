@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
-import SwichLanguage from "../../../components/swichLanguage";
+import SwichLanguage from "../../../components/SwichLanguage";
 
 import {CgLogOff} from "react-icons/cg";
 import {AiOutlineSearch} from "react-icons/ai";

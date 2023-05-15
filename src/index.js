@@ -2,14 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
+import Context from './hoockHelper/Context';
+
 import App from './pagesContainer/App';
 
+
 import './index.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(  
     <BrowserRouter>
-        <App />
+        <Context>
+            <App />
+        </Context>
     </BrowserRouter>
 );
 
