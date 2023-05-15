@@ -1,0 +1,75 @@
+.header__container{
+    width: 100%;
+    height: 40px;   
+    background-color: var(--color-blue);
+    text-align: center;
+    display: flex; 
+    justify-content: space-between; 
+    padding-top: 5px;
+}
+.header__container_navigate_left{
+    display: flex;
+    text-align: center;
+}
+.header__container__logoItem{
+    display: flex;
+    text-align: center;
+    cursor: pointer; 
+    margin-right: 30px;  
+}
+.header__container__logo{
+    font-size: 25px;
+}
+.header__container_label{
+    position: relative;
+
+}
+.header__container_searchImg{
+    position: absolute;
+    font-size: 18px;
+    margin-top: 5px;
+    left: 5px;
+}
+.header__container_searchInput{
+    padding: 5px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: var(--color-grey);
+    margin-right: 30px;     
+}
+.header__container_searchInput::placeholder{
+    color:var(--color-black);
+}
+
+.header__container_bell{
+    font-size: 25px;
+    cursor: pointer;  
+    padding: 0 5px; 
+}
+.header__container_bell:hover{
+    background-color: var(--color-grey); 
+    
+}
+
+.header__container_navigate_right{
+    text-align: center;
+    display: flex; 
+    cursor: pointer;  
+    padding: 0 5px;        
+}
+.header__container_navigate_right:hover{
+    background-color: var(--color-grey); 
+     
+}
+.header__container_personImg{
+    margin-right: 10px; 
+    font-size: 25px;
+}
+
+.header__container_personInfo{
+    font-size: 20px;
+}
+
+
+

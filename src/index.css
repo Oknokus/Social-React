@@ -1,39 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@200;400;600&family=Raleway:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 
 *{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    outline: none;
-    transition: .3s all;  
-    font-family: 'Raleway', sans-serif; 
-    font-style: normal;  
-  }
-
-button, input{
-    cursor: pointer;
-}
-
-/* $blue: #027581;
-$blue: #181818;
-$grey: #8c8c8c;
-$red: #f5222d;
-
-
-@mixin  text($fz, $lh, $fw, $col) {
-    font-weigth: $fw;
-    @if $lh > 9 {
-        line-height: $lh;
-    }
-    font-size: $fz;
-    color: $col
-} */
-
-
-container{
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    font-style: normal;
+    /* font-family: 'Raleway', sans-serif; */
+    box-sizing: border-box;
+    max-width: 100%;
+    
+
+    /* Colors */
+    --color-blue: rgba(17, 46, 90, 0.507);
+    --color-grey: rgba(29, 66, 64, 0.342);
+    --color-black: #333;
 }

@@ -1,0 +1,17 @@
+.swichLanguage_container{
+    display: flex;
+}
+
+.swichLanguage_bnt{
+    border: none;
+    margin-right: 5px;
+    padding: 0 5px;
+    background-color: var(--color-grey);
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 3px;
+}
+.swichLanguage_bnt:hover{
+    background-color: var(--color-blue);
+}
+
