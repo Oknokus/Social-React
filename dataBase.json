@@ -1,4 +1,12 @@
 {
-  "users": [   
+  "users": [
+    {
+      "email": "oknokus@gmail.com",
+      "password": "$2a$10$5.rrdFEAA0kjDzWZ5JeuD.jfW597uX/01gvW2gdMIqg.09JI/2Bci",
+      "login": "Oknokus",
+      "birsday": "1989",
+      "categories": [],
+      "id": 1
+    }
   ]
 }

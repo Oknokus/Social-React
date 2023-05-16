@@ -1,27 +1,62 @@
+import { createContext, useState } from "react";
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-const CustomContext = createContext();
+export const CustomContext = createContext();
 
-
-const Context = (props) => {
+export const Context = (props) => {
     const [userState, setUserState] = useState();
 
-    const registerUser = (data) => {
-    axios.post('http://localhost:8080/register', {
-        ...data,
-        categories: []
-    }).then(res => {
-        setUserState({            
-        })
-        .catch(err => console.log(err))          
-    })
+    const navigate = useNavigate();
+    const location = useLocation();
+   
+
+    const registerUser = (data) => {  
+         axios.post('http://localhost:8080/register', {
+         ...data,
+         categories: []        
+    }).then(res => {     
+        setUserState({
+            token: res.data.accessToken,
+            ...res.data.user
+        });
+        localStorage.setItem("user", JSON.stringify({
+            token: res.data.accessToken,
+            ...res.data.user
+        }));
+        navigate("layout");      
+               
+    }).catch(err => console.log(err))  
     }
 
-    const value = { 
-        registerUser 
+    const loginUser = (data) => {  
+        axios.post('http://localhost:8080/login', {
+        ...data             
+    }).then(res => {     
+       setUserState({
+           token: res.data.accessToken,
+           ...res.data.user
+       });
+       localStorage.setItem("user", JSON.stringify({
+           token: res.data.accessToken,
+           ...res.data.user
+       }));
+       navigate("layout")      
+              
+    }).catch(err => console.log(err))  
+    }
+
+    const onSubmitForm = (data) => {
+        location.pathname="/register" ? registerUser(data) : loginUser(data)
     };
 
+    const value ={
+        userState,
+        setUserState,       
+        onSubmitForm        
+    };
+ 
     return <CustomContext.Provider value={value}>
             {props.children}
         </CustomContext.Provider>
