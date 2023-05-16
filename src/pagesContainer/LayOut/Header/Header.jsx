@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
+import { useContext, useState } from 'react';
+import { CustomContext } from '../../../hoockHelper/Context';
 
 import SwichLanguage from "../../../components/SwichLanguage";
+import PersonInfo from '../../../components/PersonInfo';
 
 import {CgLogOff} from "react-icons/cg";
 import {AiOutlineSearch} from "react-icons/ai";
@@ -13,9 +16,16 @@ import {MdAddAPhoto} from "react-icons/md";
 import styles from './Header.module.css';
 
 
+
 const Header = () => {
+    const [active, setActive] = useState(false);
+    const {
+        userState
+    } = useContext(CustomContext);
+
     const {t} = useTranslation();
-    return (
+   
+    return (        
         <div className={styles.header__container}>
             <div className={styles.header__container_navigate_left}>
                 <div className={styles.header__container__logoItem}>
@@ -33,11 +43,22 @@ const Header = () => {
 
             <SwichLanguage />
                                  
-            <div className={styles.header__container_navigate_right}>
+            <div 
+                className={styles.header__container_navigate_right}
+                onClick={()=> setActive(prev => !prev )}>
                 <span className={styles.header__container_personImg}><MdAddAPhoto/></span>
-                <span className={styles.header__container_personInfo}><BsChevronDoubleDown/></span>
-            </div>
-               
+                <span className={styles.header__container_personInfo}><BsChevronDoubleDown/></span> 
+                
+                {active &&                     
+                    <div 
+                        className={styles.header__container_personInfo}>
+                        <PersonInfo userState={userState}/>
+                    </div> 
+                     
+                }   
+                             
+            </div> 
+                         
         </div>
     )
 }

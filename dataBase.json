@@ -2,11 +2,49 @@
   "users": [
     {
       "email": "oknokus@gmail.com",
-      "password": "$2a$10$5.rrdFEAA0kjDzWZ5JeuD.jfW597uX/01gvW2gdMIqg.09JI/2Bci",
+      "password": "$2a$10$TsAT43onAYvkg.wTTBvaZuwWNbP1hkq.4d2.WxeOahkMxNPCQgfiK",
       "login": "Oknokus",
       "birsday": "1989",
       "categories": [],
       "id": 1
+    },
+    {
+      "email": "oknokus1@gmail.com",
+      "password": "$2a$10$QhYqkAlCWUBvcH3zK8.7NeEU.aFmEkDXL846wWb.8k/U1qZr/tnk6",
+      "login": "Oknokus1",
+      "birsday": "1989",
+      "categories": [],
+      "id": 2
+    },
+    {
+      "email": "oknokus3@gmail.com",
+      "password": "$2a$10$ycWiknDI4FtIRw4cg/GkIuwk34aEStSwMGXOWX7rLRKxiMuW5C302",
+      "login": "Oknokus3",
+      "birsday": "1988",
+      "categories": [],
+      "id": 3
+    },
+    {
+      "email": "oknokus4@gmail.com",
+      "password": "$2a$10$J2ZINfJlDm5BRecHPDKCIeIEPsTzR4qOyRKuPdp.WPuE2v19qhEru",
+      "login": "Oknokus4",
+      "birsday": "1989",
+      "categories": [],
+      "id": 4
+    },
+    {
+      "email": "oknokus2@gmail.com",
+      "password": "$2a$10$gs5Dn3KgZEKWS1O.hKvfGeS/YJ7BdhPeDh1lnHXrbT88EbzCi9CPW",
+      "categories": [],
+      "id": 5
+    },
+    {
+      "email": "oknokusK@gmail.com",
+      "password": "$2a$10$mxc.x4d3GdmTAluPIUsTkeRBcsKd.pXBW0i3KgrfgxPnJ8s1I6Am6",
+      "login": "Kirill",
+      "birsday": "1988",
+      "categories": [],
+      "id": 6
     }
   ]
 }

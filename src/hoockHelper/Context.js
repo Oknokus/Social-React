@@ -10,7 +10,7 @@ export const Context = (props) => {
 
     const navigate = useNavigate();
     const location = useLocation();
-   
+    
 
     const registerUser = (data) => {  
          axios.post('http://localhost:8080/register', {
@@ -48,9 +48,11 @@ export const Context = (props) => {
     }
 
     const onSubmitForm = (data) => {
-        location.pathname="/register" ? registerUser(data) : loginUser(data)
+        if(location.pathname="/register") {
+            registerUser(data);            
+        } loginUser(data)       
     };
-
+    
     const value ={
         userState,
         setUserState,       
@@ -60,5 +62,4 @@ export const Context = (props) => {
     return <CustomContext.Provider value={value}>
             {props.children}
         </CustomContext.Provider>
-
 }

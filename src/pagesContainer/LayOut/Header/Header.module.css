@@ -53,6 +53,7 @@
 }
 
 .header__container_navigate_right{
+    position: relative;
     text-align: center;
     display: flex; 
     cursor: pointer;  
@@ -70,6 +71,7 @@
 .header__container_personInfo{
     font-size: 20px;
 }
+
 
 
 

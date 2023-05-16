@@ -15,9 +15,7 @@ const Form = () => {
 
     const {
         onSubmitForm
-    } = useContext(CustomContext);
-
-  
+    } = useContext(CustomContext); 
 
     const {
         register,
@@ -25,8 +23,7 @@ const Form = () => {
             formState: {
                 errors
         }
-    } = useForm({mode: "onblur"});
-   
+    } = useForm({mode: "onblur"});   
  
     return (
         <div className={styles.form_container}>
@@ -39,8 +36,11 @@ const Form = () => {
                     {
                         location.pathname === "/register" ? "Регистрация" : "Вход"
                     } 
-                </h1>  
+                </h1>
 
+                    {
+                        location.pathname === "/register" ? 
+                <>
                 <label className={styles.form_container_label}>
                     <span className='login-container__form__errors'>{errors.login && errors.login.message}</span> 
                   
@@ -120,8 +120,49 @@ const Form = () => {
                     className={styles.form_container_input}         
                     type="password" placeholder='Ввeдите пароль' />
                 </label>
-                
+                </> 
+                :
+                <>
+                <label className={styles.form_container_label}>
+                    <span className='login-container__form__errors'>{errors.email && errors.email.message}</span> 
+                    
+                    <input {...register("email", {
+                                required : {
+                                    message: "Заполните поле",
+                                    value: true
+                                },
+                                pattern : {
+                                    message: "Заполните поле правильно",
+                                    value: /^[^ ]+@[^ ]+\.[a-z]{2,5}$/
+                                } 
+                            })}  
+                    className={styles.form_container_input} 
+                    type="email" placeholder='Введите Email' />
+                </label>
 
+                <label className={styles.form_container_label}>
+                    <span className='login-container__form__errors'>{errors.password && errors.login.password}</span> 
+                   
+                    <input {...register("password", {
+                                required : {
+                                    message: "Заполните поле",
+                                    value: true
+                                },
+                                maxLength : {
+                                    message: "Максимальное число символов 10",
+                                    value: 10 
+                                }, 
+                                pattern : {
+                                    message: "Пароль  должен содержать не мение 8 символов, заглавную букву, число!",
+                                    value: /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{8,}/g
+                                }
+                            })} 
+                    className={styles.form_container_input}         
+                    type="password" placeholder='Ввeдите пароль' />
+                </label>
+                </>
+                }   
+              
                 <label className={styles.form_container_label}>                                     
                     <button 
                         className={styles.form_container_btn} 
@@ -141,9 +182,6 @@ const Form = () => {
                             : <>Ещё нет аккаунта ? <Link to="/register" className='register-container__form__link'>Зарегистрироваться</Link></>
                     }
                 </p>
-
-
-               
             </form>
         </div>
     )
