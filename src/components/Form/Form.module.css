@@ -41,3 +41,6 @@
     background-color: var(--color-blue_ligth);
     box-shadow: 0px 0px 5px;  
 }
+.form_container_gender{
+    display: flex;
+}

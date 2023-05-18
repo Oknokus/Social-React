@@ -14,16 +14,21 @@ import {MdAddAPhoto} from "react-icons/md";
 
 
 import styles from './Header.module.css';
-
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const Header = () => {
+    const {t} = useTranslation(); 
+
     const [active, setActive] = useState(false);
     const {
         userState
     } = useContext(CustomContext);
 
-    const {t} = useTranslation();
+   
+    if(userState === undefined) {
+       return <Navigate to={"/register"}/>              
+    }; 
    
     return (        
         <div className={styles.header__container}>
@@ -53,10 +58,8 @@ const Header = () => {
                     <div 
                         className={styles.header__container_personInfo}>
                         <PersonInfo userState={userState}/>
-                    </div> 
-                     
-                }   
-                             
+                    </div>
+                }                                
             </div> 
                          
         </div>

@@ -1,5 +1,5 @@
 import i18n from "i18next";
-import HttpBackend, { HttpBackendOptions } from 'i18next-http-backend'
+import HttpBackend from 'i18next-http-backend'
 import languagedetector from "i18next-browser-languagedetector";
 import {initReactI18next} from "react-i18next";
 

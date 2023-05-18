@@ -7,13 +7,14 @@ export const CustomContext = createContext();
 
 export const Context = (props) => {
     const [userState, setUserState] = useState();
+    const [images, setImages] = useState();
 
     const navigate = useNavigate();
     const location = useLocation();
     
 
-    const registerUser = (data) => {  
-         axios.post('http://localhost:8080/register', {
+    const registerUser = (data) => {     
+         axios.post('http://localhost:8080/register', {           
          ...data,
          categories: []        
     }).then(res => {     
@@ -46,17 +47,19 @@ export const Context = (props) => {
               
     }).catch(err => console.log(err))  
     }
-
+    
     const onSubmitForm = (data) => {
-        if(location.pathname="/register") {
-            registerUser(data);            
-        } loginUser(data)       
+        if(location.pathname="/register") { 
+            registerUser(data)
+        } loginUser(data) 
     };
     
     const value ={
         userState,
-        setUserState,       
-        onSubmitForm        
+        setUserState,
+        images,
+        setImages,
+        onSubmitForm             
     };
  
     return <CustomContext.Provider value={value}>
