@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 export const CustomContext = createContext();
@@ -11,16 +11,30 @@ export const Context = (props) => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    
 
-    const registerUser = (data) => {     
+    const changeImg = (e) => {
+        const inputImg = e.target;
+        const file = inputImg.files[0];
+    
+        const personUrl = URL.createObjectURL(file);   
+    
+        localStorage.setItem("myPhoto", personUrl);   
+    };    
+
+    const registerUser = (data) => {      
+        const imgFile = data.personImg[0]
+        const img = URL.createObjectURL(imgFile);
+        
          axios.post('http://localhost:8080/register', {           
-         ...data,
-         categories: []        
-    }).then(res => {     
+        ...data,        
+        url: localStorage.getItem("myPhoto")        
+    }).then(res => {
         setUserState({
             token: res.data.accessToken,
-            ...res.data.user
+            ...res.data.user,
+            personImg: [
+                ...img
+            ]           
         });
         localStorage.setItem("user", JSON.stringify({
             token: res.data.accessToken,
@@ -49,17 +63,17 @@ export const Context = (props) => {
     }
     
     const onSubmitForm = (data) => {
-        if(location.pathname="/register") { 
-            registerUser(data)
-        } loginUser(data) 
+        location.pathname === "/register" ?  registerUser(data) : loginUser(data)
     };
+  
     
     const value ={
         userState,
         setUserState,
         images,
         setImages,
-        onSubmitForm             
+        onSubmitForm ,
+        changeImg            
     };
  
     return <CustomContext.Provider value={value}>

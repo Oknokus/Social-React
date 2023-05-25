@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useContext, useState } from 'react';
 import { CustomContext } from '../../../hoockHelper/Context';
 
-import SwichLanguage from "../../../components/SwichLanguage";
+import SwichLanguage from "../../../components/swichLanguage";
 import PersonInfo from '../../../components/PersonInfo';
 
 import {CgLogOff} from "react-icons/cg";
@@ -55,9 +55,8 @@ const Header = () => {
                 <span className={styles.header__container_personInfo}><BsChevronDoubleDown/></span> 
                 
                 {active &&                     
-                    <div 
-                        className={styles.header__container_personInfo}>
-                        <PersonInfo userState={userState}/>
+                    <div className={styles.header__container_personInfo}> 
+                        <PersonInfo />
                     </div>
                 }                                
             </div> 

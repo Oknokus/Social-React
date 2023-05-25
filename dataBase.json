@@ -2,46 +2,58 @@
   "users": [
     {
       "email": "oknokus@gmail.com",
-      "password": "$2a$10$fGHaGyDsxIuzI5VAM57rDegO6UiRHM1yi.DDtZ7gYJzYaRkM/F8H2",
+      "password": "$2a$10$uGwkQg9zKXVLqcaRiX5QoOtLmiq66vfi9yx1SBGNEkxzvWrStma2e",
       "name": "KIRYL",
       "surName": "SUKONKA",
       "phone": "+375 (29) 589-48-49",
-      "birsday": "2023-05-16",
+      "birsday": "2023-05-10",
       "gender": "men",
-      "categories": [],
+      "personImg": {
+        "0": {}
+      },
+      "url": "blob:http://localhost:3000/682ea53d-fad9-4beb-847b-f1bbd84cbf13",
       "id": 1
     },
     {
       "email": "oknokus1@gmail.com",
-      "password": "$2a$10$/FKA60X8O/FlKXZU5jFIouQV71OawJSSkPBt.luPZVc1SrhWuf66y",
+      "password": "$2a$10$8jKlju.vaDQ.ZFyth/8q6O4ao9KubNg8E2pzAuBKMTWVt8Av2/quS",
       "name": "KIRYL",
       "surName": "SUKONKA",
       "phone": "+375 (29) 589-48-49",
-      "birsday": "2023-05-19",
+      "birsday": "2023-05-10",
       "gender": "men",
-      "categories": [],
+      "personImg": {
+        "0": {}
+      },
+      "url": "blob:http://localhost:3000/9dd7cf0f-f40e-430d-bd08-4068021afee8",
       "id": 2
     },
     {
-      "email": "oknokus3@gmail.com",
-      "password": "$2a$10$cXFX3jXUuuQ1BeNsz8KGNeSB/3k9bec3RCB4bO0C1ncxNUkVCHFTy",
+      "email": "oknokus2@gmail.com",
+      "password": "$2a$10$qOAFX7XICK4pB9Ff6g5AC.Fh9phJ/M0zceF.W5X3QbFMpi.TshcRW",
       "name": "KIRYL",
       "surName": "SUKONKA",
       "phone": "+375 (29) 589-48-49",
-      "birsday": "2023-05-15",
+      "birsday": "2023-05-05",
       "gender": "men",
-      "categories": [],
+      "personImg": {
+        "0": {}
+      },
+      "url": "blob:http://localhost:3000/f171e610-c1d8-46e2-9aaa-82f663e4a7bf",
       "id": 3
     },
     {
-      "email": "oknokus5@gmail.com",
-      "password": "$2a$10$GXQY/Cbd5whc.5LVlRkTae8yShG.SzY4zD0K2sbNHIePJ1GCWlAZW",
+      "email": "oknokus8@gmail.com",
+      "password": "$2a$10$QaNMVLpFTi3DeLLx.z/9TOGEjs67AC6rI23BBugnX4cbVm5uZ/ixO",
       "name": "KIRYL",
       "surName": "SUKONKA",
       "phone": "+375 (29) 589-48-49",
-      "birsday": "2023-05-02",
+      "birsday": "2023-05-10",
       "gender": "men",
-      "categories": [],
+      "personImg": {
+        "0": {}
+      },
+      "url": "blob:http://localhost:3000/969744ee-33bb-4c1c-be5f-aa8e0b45d369",
       "id": 4
     }
   ]

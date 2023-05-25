@@ -4,9 +4,7 @@ import { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-
 import {CustomContext} from "../../hoockHelper/Context";
-import DownLoadBtn from "../DownLoadBtn";
 
 
 import styles from './Form.module.css';
@@ -16,7 +14,8 @@ const Form = () => {
     const location = useLocation();
 
     const {
-        onSubmitForm        
+        onSubmitForm,
+        changeImg        
     } = useContext(CustomContext); 
 
     const {
@@ -26,7 +25,7 @@ const Form = () => {
                 errors
         }
     } = useForm({mode: "onblur"}); 
-       
+
  
     return (
         <div className={styles.form_container}>
@@ -85,7 +84,7 @@ const Form = () => {
                         className={styles.form_container_input} 
                         type="text" placeholder='Ввeдите Фамилию' />
                     </label>
-
+                  
                     <label className={styles.form_container_label}>
                         <span className='login-container__form__errors'>{errors.email && errors.email.message}</span> 
                         
@@ -135,7 +134,7 @@ const Form = () => {
                                 })}  
                         className={styles.form_container_input} 
                         type="date" placeholder='Введите дату Рождения' />
-                    </label>
+                    </label>                     
 
                     <div className={styles.form_container_gender}>
                         <div>
@@ -168,9 +167,21 @@ const Form = () => {
                             <label htmlFor="women">Women</label>
                         </div>
                     </div>
+                    
+                    <label className={styles.form_container_label}>
+                        <span className='login-container__form__errors'>{errors.personImg && errors.personImg.message}</span> 
+
+                        <input {...register("personImg", {
+                                    required : {
+                                        message: "Выберите изображение",
+                                        value: true
+                                    }                                    
+                                })}
+                                type="file" onChange={(e) => changeImg(e)} />
+                    </label>
 
                     <label className={styles.form_container_label}>
-                        <span className='login-container__form__errors'>{errors.password && errors.login.password}</span> 
+                        <span className='login-container__form__errors'>{errors.password && errors.password.message}</span> 
                     
                         <input {...register("password", {
                                     required : {
@@ -230,9 +241,7 @@ const Form = () => {
                     type="password" placeholder='Ввeдите пароль' />
                 </label>
                 </>
-                }
-
-                <DownLoadBtn />   
+                }              
               
                 <label className={styles.form_container_label}>                                     
                     <button 
