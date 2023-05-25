@@ -1,5 +1,44 @@
 {
     "header": {
         "field": "Поиск"
+    },
+    "name": {
+        "field": "Имя"
+    },
+    "surname": {
+        "field": "Фамилия"
+    },
+    "email": {
+        "field": "Email"
+    },
+    "phone": {
+        "field": "Телефон"
+    },
+    "birsday": {
+        "field": "Дата Рождения"
+    },
+    "sex": {
+        "field": "Пол"
+    },
+    "password": {
+        "field": "Пароль"
+    },
+    "img": {
+        "field": "Добавте фото"
+    },
+    "genderW": {
+        "field": "Женщина"
+    },
+    "genderM": {
+        "field": "Мужчина"
+    },
+    "register": {
+        "field": "Регистрация"
+    },
+    "logIn": {
+        "field": "Авторизация"
+    },
+    "title": {
+        "field": "Регистрация"
     }
 }

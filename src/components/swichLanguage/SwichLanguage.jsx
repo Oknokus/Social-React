@@ -7,7 +7,7 @@ import styles from './SwichLanguage.module.css';
 
 
 const SwichLanguage = () => {
-    const {t, i118n} = useTranslation
+    const {t, i118n} = useTranslation();
     const changeLanguage = (lang) => {
         i18n.changeLanguage(lang)
     };

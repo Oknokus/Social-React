@@ -24,10 +24,18 @@ const PersonInfo = () => {
       
 return ( 
         <div className={styles.personInfo_container}>  
-            <h1>{`${userState.name} ${userState.surName}`}</h1>
-            <img src={userState.url} alt="personImg" />
-            <p>Phone: {userState.phone}</p> 
-            <button onClick={() => goOut()}>Выйти</button>                   
+            <span className={styles.personInfo_container_span}>
+                <h3>{`${userState.name} ${userState.surName}`}</h3>
+                <img 
+                    className={styles.personInfo_container_img}
+                    src={userState.url} alt="personImg" />
+            </span>
+            
+            <h5>Phone: {userState.phone}</h5> 
+            <button
+                className={styles.personInfo_container_btn} 
+                onClick={() => goOut()}>Выйти
+            </button>                   
         </div>
     )
 }

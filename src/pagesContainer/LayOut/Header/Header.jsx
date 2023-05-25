@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useContext, useState } from 'react';
 import { CustomContext } from '../../../hoockHelper/Context';
 
-import SwichLanguage from "../../../components/swichLanguage";
+import SwichLanguage from "../../../components/SwichLanguage";
 import PersonInfo from '../../../components/PersonInfo';
 
 import {CgLogOff} from "react-icons/cg";

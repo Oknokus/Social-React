@@ -31,14 +31,12 @@ export const Context = (props) => {
     }).then(res => {
         setUserState({
             token: res.data.accessToken,
-            ...res.data.user,
-            personImg: [
-                ...img
-            ]           
+            ...res.data.user  
         });
         localStorage.setItem("user", JSON.stringify({
             token: res.data.accessToken,
-            ...res.data.user
+            ...res.data.user,
+            img
         }));
         navigate("layout");      
                

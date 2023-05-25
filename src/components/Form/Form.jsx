@@ -3,8 +3,10 @@ import axios from 'axios';
 import { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import {CustomContext} from "../../hoockHelper/Context";
+import SwichLanguage from "../SwichLanguage";
 
 
 import styles from './Form.module.css';
@@ -12,6 +14,7 @@ import styles from './Form.module.css';
 
 const Form = () => { 
     const location = useLocation();
+    const {t} = useTranslation(); 
 
     const {
         onSubmitForm,
@@ -28,18 +31,21 @@ const Form = () => {
 
  
     return (
-        <div className={styles.form_container}>
-           
+        <div className={styles.form_container}>           
+                       
             <form
                 className={styles.form_container_form}
                 onSubmit={handleSubmit(onSubmitForm)} noValidate>
+
+                <div className={styles.form_container_languare}> 
+                    <SwichLanguage />
+                </div>
                  
                 <h1 className={styles.form_container_title}>
                     {
                         location.pathname === "/register" ? "Регистрация" : "Вход"
                     } 
                 </h1>
-
                     {
                         location.pathname === "/register" ? 
                 <>
@@ -61,7 +67,7 @@ const Form = () => {
                                     }
                                 })} 
                         className={styles.form_container_input} 
-                        type="text" placeholder='Ввeдите Имя' />
+                        type="text" placeholder={t(`name.field`)} />
                     </label>
 
                     <label className={styles.form_container_label}>
@@ -82,7 +88,7 @@ const Form = () => {
                                     }
                                 })} 
                         className={styles.form_container_input} 
-                        type="text" placeholder='Ввeдите Фамилию' />
+                        type="text" placeholder={t(`surname.field`)} />
                     </label>
                   
                     <label className={styles.form_container_label}>
@@ -99,7 +105,7 @@ const Form = () => {
                                     } 
                                 })}  
                         className={styles.form_container_input} 
-                        type="email" placeholder='Введите Email' />
+                        type="email" placeholder={t(`email.field`)} />
                     </label>
 
                     <label className={styles.form_container_label}>
@@ -112,7 +118,7 @@ const Form = () => {
                                     }                                    
                                 })}  
                         className={styles.form_container_input} 
-                        type="tel"  placeholder='Введите Телефон' />
+                        type="tel"  placeholder={t(`phone.field`)} />
                     </label>
 
                     <label className={styles.form_container_label}>
@@ -133,7 +139,7 @@ const Form = () => {
                                     }
                                 })}  
                         className={styles.form_container_input} 
-                        type="date" placeholder='Введите дату Рождения' />
+                        type="date" placeholder={t(`birsday.field`)} />
                     </label>                     
 
                     <div className={styles.form_container_gender}>
@@ -147,9 +153,10 @@ const Form = () => {
                                 type="radio"
                                 name='gender'
                                 value="men"
-                                id='men' />
+                                id='men' 
+                                placeholder={t(`header.field`)}/>
 
-                            <label htmlFor="men">Men</label>
+                            <label htmlFor="men">{t(`genderM.field`)}</label>
                         </div>
 
                         <div>
@@ -162,9 +169,10 @@ const Form = () => {
                                 type="radio"
                                 name='gender'
                                 value="women"
-                                id='women' />
+                                id='women' 
+                                placeholder={t(`header.field`)}/>
 
-                            <label htmlFor="women">Women</label>
+                            <label htmlFor="women">{t(`genderW.field`)}</label>
                         </div>
                     </div>
                     
@@ -177,7 +185,8 @@ const Form = () => {
                                         value: true
                                     }                                    
                                 })}
-                                type="file" onChange={(e) => changeImg(e)} />
+                                type="file" onChange={(e) => changeImg(e)} 
+                                placeholder={t(`img.field`)}/>
                     </label>
 
                     <label className={styles.form_container_label}>
@@ -198,7 +207,7 @@ const Form = () => {
                                     }
                                 })} 
                         className={styles.form_container_input}         
-                        type="password" placeholder='Ввeдите пароль' />
+                        type="password" placeholder={t(`password.field`)} />
                     </label>
                 </> 
                     :
@@ -217,7 +226,7 @@ const Form = () => {
                                     } 
                                 })}  
                         className={styles.form_container_input} 
-                        type="email" placeholder='Введите Email' />
+                        type="email" placeholder={t(`email.field`)} />
                     </label>
 
                 <label className={styles.form_container_label}>
@@ -238,7 +247,7 @@ const Form = () => {
                                 }
                             })} 
                     className={styles.form_container_input}         
-                    type="password" placeholder='Ввeдите пароль' />
+                    type="password" placeholder={t(`password.field`)} />
                 </label>
                 </>
                 }              
@@ -248,9 +257,14 @@ const Form = () => {
                         className={styles.form_container_btn} 
                         type="submit">
                             {
-                                location.pathname === "/register" ?
-                                "Зарегистрироваться" :
-                                "Войти" 
+                                location.pathname === "/register" ?                                
+                                <>
+                                    {t(`field.register`)} 
+                                </>
+                                :
+                                <>
+                                    {t(`field.logIn`)}
+                                </>                                 
                             }                            
                     </button>
                 </label>
@@ -258,8 +272,8 @@ const Form = () => {
                 <p>
                     {
                         location.pathname === "/register" ? 
-                            <>У меня уже есть аккаунт чтобы <Link to="/login" className='register-container__form__link'>войти</Link></> 
-                            : <>Ещё нет аккаунта ? <Link to="/register" className='register-container__form__link'>Зарегистрироваться</Link></>
+                            <>У меня уже есть аккаунт чтобы <Link to="/login" className='register-container__form__link'>Авторизация</Link></> 
+                            : <>Ещё нет аккаунта ? <Link to="/register" className='register-container__form__link'>Регистрация</Link></>
                     }
                 </p>
             </form>

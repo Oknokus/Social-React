@@ -1,5 +1,44 @@
 {
     "header": {
         "field": "Search"
+    },
+    "name": {
+        "field": "Name"
+    },
+    "surname": {
+        "field": "Surname"
+    },
+    "email": {
+        "field": "Email"
+    },
+    "phone": {
+        "field": "Phone"
+    },
+    "birsday": {
+        "field": "Birsday"
+    },
+    "sex": {
+        "field": "Sex"
+    },
+    "password": {
+        "field": "Password"
+    },
+    "img": {
+        "field": "Photo"
+    },
+    "genderW": {
+        "field": "Women"
+    },   
+    "genderM": {
+        "field": "Men"
+    },
+    "register": {
+        "field": "register"
+    },
+    "logIn": {
+        "field": "Log In"
+    },
+    "title": {
+        "field": "Register"
     }
 }

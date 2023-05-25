@@ -1,8 +1,29 @@
+.personInfo_container_span{
+    display: flex;
+    text-align: center; 
+    padding: 10px;   
+}
 .personInfo_container{  
-    min-width: 200px;
-    height: 300px;
-    border: 1px solid black;
+    min-width: 200px; 
     border-radius: 10px;
     position: absolute;
-    transform: translateY(35px)
+    transform: translateY(35px);
+    right: 0; 
+    box-shadow: 0px 3px 5px;     
 }
+.personInfo_container_img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+}
+ .personInfo_container_btn{   
+    background-color: var(--color-blue);
+    text-decoration: none;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    color: var(--color-yellow);
+    cursor: pointer;
+    margin: 5px 0;
+ }
